@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Search extends Component {
     handleSearch(event){
         let { value } = event.target;
-        this.props.search([].map.call( value.trim() , (item, index, arr) => arr.slice(0, index + 1) ));
+        this.props.search(value);
     }
     render(){
         return (

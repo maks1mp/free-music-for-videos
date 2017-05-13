@@ -1,14 +1,14 @@
 const deafultState = {
-    track_request: [],
-    track_name: null
+    track_name: null,
+    tracks_list: [],
 };
 
 export default function(state = deafultState, action){
     switch(action.type){
-    case 'SEARCH':
-        return { ...state, track_request: action.payload }; 
     case 'UPDATE_TRACK_NAME':
         return { ...state, track_name: action.payload }; 
+    case 'UPDATE_TRACKS_LIST':
+        return { ...state, tracks_list: action.payload }; 
     default:
         return state;
     }
