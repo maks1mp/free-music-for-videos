@@ -11,14 +11,15 @@ import Player from './player';
 import { getTracks } from './../actions/actions';
 
 class App extends Component {
-  
   render() {
-    let storeProps = this.props.main;
+    // console.log(this.props);
+    let storeProps = this.props.main,
+        { player } = this.props;
     return (
       <main>
         <Search search={ this.props.onSearch }/>
         <Track params={ storeProps.track_request } name={ storeProps.track_name }/>
-        <Player />
+        <Player track={ player.currentTrack }/>
         <List tracksList={storeProps.tracks_list} onPlay={ this.props.onPlay }/>
       </main>
     );

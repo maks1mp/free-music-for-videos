@@ -1,5 +1,5 @@
 export default function(state = {
-    currentTrack: ({}),
+    currentTrack: null,
     traksIsPlaying: false
 }, action){
     switch(action.type){
