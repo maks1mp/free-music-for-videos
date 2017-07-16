@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrenTrack } from '../actions';
+import { fetchCurrenTrack, onPause } from '../actions';
 
 class List extends Component {
-    playTrack(id){
+    playTrack(track){
         let { dispatch } = this.props;
+        if (track.isPlaying) {
+            dispatch(onPause());
+        } else {
+            dispatch(fetchCurrenTrack(track.id));
+        }
         
-        dispatch(fetchCurrenTrack(id));
     }
     render(){
         const { tracks } = this.props;
@@ -15,7 +19,8 @@ class List extends Component {
                 <ul>
                     {
                         tracks.map(track => {
-                            return (<li key={track.id} onClick={this.playTrack.bind(this, track.id)}>
+                            return (<li key={track.id} onClick={this.playTrack.bind(this, track)}>
+                                        { track.isPlaying ? '+' : '-' }
                                         {track.artist}
                                         -
                                         {track.title}
