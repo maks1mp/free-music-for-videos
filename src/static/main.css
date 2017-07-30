@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+}
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+}
+.player-root {
+    min-height: 100%;
+    position: relative;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;   
+    padding: 25px;
+}
+.player-controls {
+    padding-top: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 82%;
+    margin: 0 auto;
+}
