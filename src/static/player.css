@@ -1,0 +1,18 @@
+.player-control {
+    transition: .5s ease;
+}
+.player-control--short {
+    flex-basis: 0;
+    opacity: 0;
+}
+.player-control--wide {
+    flex-basis: 45%;
+    opacity: 1;
+}
+.track-image {
+    max-width: 250px;
+}
+.player-control-tracks {
+    display: flex;
+    flex-direction: column;
+}
